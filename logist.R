@@ -70,4 +70,16 @@ lty = "solid",
 col = "orange" 
 )
 
+# Si adhieren esto ... pueden jugar un poco con las perspectivas ... (Patricio Fuenmayor)
+
+require(rgl)
+
+open3d()
+res <- surface3d(x, y, z, col="green", back="lines")
+
+points3d(tmp$x[azules], tmp$y[azules],0, pmat=res)
+points3d(tmp$x[naranjas], tmp$y[naranjas],predicho[naranjas],
+pmat=res)
+points3d(tmp$x[azules], tmp$y[azules],predicho[azules], pmat=res)
+points3d(tmp$x[naranjas], tmp$y[naranjas],1, pmat=res) 
 
